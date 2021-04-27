@@ -1,0 +1,49 @@
+Membuat Tabel Mahasiswa pada Database:
+
+CREATE TABLE mahasiswa (
+    nim varchar(13) NOT NULL,
+    id_mahasiswa int(11) NOT NULL,
+    nama varchar(40) NOT NULL,
+    jenis_kelamin ENUM('P','L') NOT NULL,
+    jurusan varchar(30) NOT NULL,
+    alamat text(30) NOT NULL
+)ENGINE = INNODB DEFAULT CHARSET=latin1;
+
+ALTER TABLE mahasiswa
+ADD PRIMARY KEY (id_mahasiswa);
+ALTER TABLE mahasiswa
+MODIFY id_mahasiswa int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+Memasukan Data Pada Tabel:
+Awal
+INSERT INTO `mahasiswa` (`nim`, `id_mahasiswa`, `nama`, `jenis_kelamin`, `jurusan`, `alamat`) VALUES 
+('SI1908201001', '1', 'Nuris Akbar', 'L', 'Sistem Informasi', 'Banda Aceh'),
+('SI1908201002', '2', 'Muhammad Hafidz', 'L', 'Teknik Informatika', 'bandung'),
+('SI1908201003', '3', 'Desi Handayani', 'P', 'Rekamedis', 'Cimahi');
+
+Data Login
+INSERT INTO `login` (`iduser`, `nama`, `username`, `password`) VALUES 
+('1', 'dwi', 'dwi', '12345678'), 
+('2', 'Kadek', 'Kadek', '12341234'), 
+('3', 'Natasya', 'Natasya', '43214321');
+
+Membuat tabel kontak
+CREATE TABLE kontak (
+    id int(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nama varchar(30) NOT NULL,
+    jkel varchar(10),
+    email varchar(40),
+    alamat varchar(50),
+    kota varchar(20),
+    pesan text(30) 
+    );
+INSERT INTO `kontak`(`id`, `nama`, `jkel`, `email`, `alamat`, `kota`, `pesan`) VALUES 
+('4','Kadek','Perempuan','dwinatasya45.11@gmail.com','Bali','Tabanan','Hallo');
+
+
+Referensi Login
+https://youtu.be/U3zmXVJVEuQ
+https://www.malasngoding.com/membuat-login-dengan-php-dan-mysqli/
+https://www.malasngoding.com/membuat-login-dengan-php-dan-mysqli-part-2/
+
+
